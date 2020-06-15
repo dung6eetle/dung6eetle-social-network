@@ -1,0 +1,11 @@
+.friends__container {
+    margin:10px 10px;
+    background-color: #ffff;
+    min-height: 100vh;
+}
+.friends__header {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 35px;
+    font-weight: 500;
+}

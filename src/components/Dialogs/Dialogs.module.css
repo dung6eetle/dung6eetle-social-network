@@ -1,0 +1,24 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 4fr 10fr;
+    min-height: 100vh;
+}
+.dialogsItems {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.dialogs__item {
+    padding: 30px;
+}
+.dialogs__item a{
+    text-decoration: none;
+}
+.messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.messages .messages__item {
+    padding: 30px;
+}

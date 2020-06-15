@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+//import Loader from './Loader'
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile'
+import Dialogs from './components/Dialogs/Dialogs'
+import Friends from './components/Friends/Friends'
+import {BrowserRouter,Route} from 'react-router-dom'
 
-function App() {
+//const Dialogs = React.lazy(() => import ('./components/Dialogs/Dialogs')) /* Так компонента не попадает в общий бандл, используется вместе с Саспенс*/
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app_wrapper">
+         <Header/>
+         <Navbar/>
+         <div className="app_wrapper__content">
+            {/* <Route path="/dialogs" component={Dialogs}/>
+            <Route path="/profile" component={Profile}/> */}
+            <Route path="/dialogs" render={() => <Dialogs 
+            dialogsItemData={props.state.dialogsPage.dialogsItemData} 
+            messagesItemData={props.state.dialogsPage.messagesItemData}/>}/>
+            <Route path="/profile" render={() => <Profile 
+            postData={props.state.profilePage.postData}/>}/>
+            <Route path="/friends" render={() => <Friends friendsItemData={props.state.friendsPage.friendsItemData}/>}/>
+         </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
