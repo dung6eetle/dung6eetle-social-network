@@ -4,3 +4,13 @@
    padding: 0px 30px;
    flex-direction: column-reverse;
 }
+.item {
+   color: darkblue;
+   font-size: 20px;
+   flex-direction: column;
+   padding: 20px 10px;
+}
+.post__like {
+   width: 30px;
+   height:30px;
+}
