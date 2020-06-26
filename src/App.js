@@ -22,8 +22,8 @@ function App(props) {
             <Route path="/dialogs" render={() => <Dialogs 
             dialogsItemData={props.state.dialogsPage.dialogsItemData} 
             messagesItemData={props.state.dialogsPage.messagesItemData}/>}/>
-            <Route path="/profile" render={() => <Profile 
-            postData={props.state.profilePage.postData} addPost={props.addPost}/>}/>
+            <Route path="/profile" render={() => 
+            <Profile postData={props.state.profilePage.postData} addPost={props.addPost}/>}/>
             <Route path="/friends" render={() => <Friends friendsItemData={props.state.friendsPage.friendsItemData}/>}/>
          </div>
       </div>
