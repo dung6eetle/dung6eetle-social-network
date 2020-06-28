@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { rerenderEntireTree } from './render';
-import state from './redux/state'
+import store from './redux/state'
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
-rerenderEntireTree(state);
+
+let rerenderEntireTree = (state) => {
+  ReactDOM.render(
+    <BrowserRouter>
+      <App state={state} updatePostText={store.updatePostText.bind(store)} addPost={store.addPost.bind(store)}/>
+    </BrowserRouter>,
+    document.getElementById('root')
+  );
+}
+
+rerenderEntireTree(store.getState());
+store.subscribe(rerenderEntireTree); // PATTERN OBSERVER 
+
+
 
 
 

@@ -23,7 +23,7 @@ function App(props) {
             dialogsItemData={props.state.dialogsPage.dialogsItemData} 
             messagesItemData={props.state.dialogsPage.messagesItemData}/>}/>
             <Route path="/profile" render={() => 
-            <Profile postData={props.state.profilePage.postData} addPost={props.addPost}/>}/>
+            <Profile profilePage={props.state.profilePage} addPost={props.addPost} updatePostText={props.updatePostText}/>}/>
             <Route path="/friends" render={() => <Friends friendsItemData={props.state.friendsPage.friendsItemData}/>}/>
          </div>
       </div>
