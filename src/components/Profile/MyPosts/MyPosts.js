@@ -1,6 +1,10 @@
 import React, { createRef } from 'react'
 import classes from './MyPosts.module.css'
 import Post from './Post/Post.js'
+import state from '../../../redux/state'
+import {addPostActionCreator} from '../../../redux/state'
+import {updateNewPostTextActionCreator} from '../../../redux/state'
+
 
 
 function MyPosts(props) {
@@ -8,14 +12,15 @@ function MyPosts(props) {
     let postElement = props.postData.map(p => <Post message={p.message} id={p.id}/> )
 
     let newPostElement = React.createRef();
-
+    
     let addPost = () => {
-      let text = newPostElement.current.value;
-      props.addPost(text);
+      //props.addPost(text)
+      props.dispatch(addPostActionCreator())
     }
     let onNewText = () => {
       let text = newPostElement.current.value
-      props.updatePostText(text)
+      //props.updatePostText(text)
+      props.dispatch(updateNewPostTextActionCreator(text))
       
     }
 

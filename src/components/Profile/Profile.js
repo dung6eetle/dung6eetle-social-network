@@ -3,6 +3,7 @@ import classes from './Profile.module.css'
 import MyPosts from './MyPosts/MyPosts'
 import MyProfile from './MyProfile/MyProfile'
 
+
 function Profile(props) {
     
     return(
@@ -11,8 +12,7 @@ function Profile(props) {
             <MyPosts 
             postData={props.profilePage.postData} 
             newPostText={props.profilePage.newPostText} 
-            addPost={props.addPost} 
-            updatePostText={props.updatePostText}
+            dispatch={props.dispatch}
             />
         </div>
     )

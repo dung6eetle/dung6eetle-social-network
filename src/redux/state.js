@@ -1,3 +1,10 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer"
+
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
   _state: {
@@ -21,7 +28,8 @@ let store = {
         {id:22, message:"no hook no hoes"},
         {id:33, message:"GIDDY UP!"},
         {id:44, message:"Numb Numb Juice"}
-      ]
+      ],
+      newMessageBody:''
     },
     friendsPage:{
       friendsItemData:[
@@ -45,24 +53,41 @@ let store = {
   },
   
 
-  addPost () {
-    let newPost = {
-      id: 3,
-      message: this._state.profilePage.newPostText
-    };
-    this._state.profilePage.postData.push(newPost);
-    this._state.profilePage.newPostText = '';
+  dispatch(action) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action)
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
     this._callSubscriber(this._state);
-    
-  },
-  
-  updatePostText (newText)  {
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
-  
+  }   
+}
+
+export const addPostActionCreator = () => {
+  debugger;
+  return {
+    type: ADD_POST
+  }
+}
+
+export const updateNewPostTextActionCreator = (text) => {
+  return {
+    type: UPDATE_NEW_POST_TEXT, 
+    newText: text
+  }
+}
+
+export const updateNewMessageBodyCreator = (body) => {
+  return {
+    type: UPDATE_NEW_MESSAGE_BODY,
+    body: body
+
+  }
+}
+
+export const sendMessageCreator = () => {
+  return {
+    type: SEND_MESSAGE,
+  }
 }
 
 
-export default store
 window.store = store
+export default store

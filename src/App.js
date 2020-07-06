@@ -20,10 +20,9 @@ function App(props) {
             {/* <Route path="/dialogs" component={Dialogs}/>
             <Route path="/profile" component={Profile}/> */}
             <Route path="/dialogs" render={() => <Dialogs 
-            dialogsItemData={props.state.dialogsPage.dialogsItemData} 
-            messagesItemData={props.state.dialogsPage.messagesItemData}/>}/>
+            store={props.store} dialogsPage={props.state.dialogsPage}/>}/>
             <Route path="/profile" render={() => 
-            <Profile profilePage={props.state.profilePage} addPost={props.addPost} updatePostText={props.updatePostText}/>}/>
+            <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}/>
             <Route path="/friends" render={() => <Friends friendsItemData={props.state.friendsPage.friendsItemData}/>}/>
          </div>
       </div>
