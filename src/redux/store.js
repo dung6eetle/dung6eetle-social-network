@@ -41,6 +41,7 @@ let store = {
       ]
     },
   },
+
   _callSubscriber() {
     console.log('State changed')
   },
@@ -52,7 +53,6 @@ let store = {
     this._callSubscriber = observer;
   },
   
-
   dispatch(action) {
     this._state.profilePage = profileReducer(this._state.profilePage, action)
     this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
@@ -60,33 +60,7 @@ let store = {
   }   
 }
 
-export const addPostActionCreator = () => {
-  debugger;
-  return {
-    type: ADD_POST
-  }
-}
 
-export const updateNewPostTextActionCreator = (text) => {
-  return {
-    type: UPDATE_NEW_POST_TEXT, 
-    newText: text
-  }
-}
-
-export const updateNewMessageBodyCreator = (body) => {
-  return {
-    type: UPDATE_NEW_MESSAGE_BODY,
-    body: body
-
-  }
-}
-
-export const sendMessageCreator = () => {
-  return {
-    type: SEND_MESSAGE,
-  }
-}
 
 
 window.store = store

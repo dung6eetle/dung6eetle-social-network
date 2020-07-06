@@ -7,12 +7,16 @@ import Profile from './components/Profile/Profile'
 import Dialogs from './components/Dialogs/Dialogs'
 import Friends from './components/Friends/Friends'
 import {BrowserRouter,Route} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './redux/redux-store'
 
 //const Dialogs = React.lazy(() => import ('./components/Dialogs/Dialogs')) /* Так компонента не попадает в общий бандл, используется вместе с Саспенс*/
 
 function App(props) {
+  
   return (
-    <BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
       <div className="app_wrapper">
          <Header/>
          <Navbar/>
@@ -20,13 +24,14 @@ function App(props) {
             {/* <Route path="/dialogs" component={Dialogs}/>
             <Route path="/profile" component={Profile}/> */}
             <Route path="/dialogs" render={() => <Dialogs 
-            store={props.store} dialogsPage={props.state.dialogsPage}/>}/>
+            store={props.store}  dialogsPage={props.state.dialogsPage}/>}/> 
             <Route path="/profile" render={() => 
-            <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}/>
+            <Profile  />}/>
             <Route path="/friends" render={() => <Friends friendsItemData={props.state.friendsPage.friendsItemData}/>}/>
          </div>
       </div>
     </BrowserRouter>
+    </Provider>
   );
 }
 

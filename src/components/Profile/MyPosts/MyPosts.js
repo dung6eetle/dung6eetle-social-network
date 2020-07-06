@@ -1,9 +1,8 @@
 import React, { createRef } from 'react'
 import classes from './MyPosts.module.css'
 import Post from './Post/Post.js'
-import state from '../../../redux/state'
-import {addPostActionCreator} from '../../../redux/state'
-import {updateNewPostTextActionCreator} from '../../../redux/state'
+import state from '../../../redux/store'
+import {addPostActionCreator, updateNewPostTextActionCreator} from '../../../redux/profile-reducer'
 
 
 
