@@ -20,7 +20,7 @@ rerenderEntireTree(store.getState());
 store.subscribe(() => {
   let state = store.getState()
   rerenderEntireTree(state)
-}); // PATTERN OBSERVER 
+}); // PATTERN OBSERVER  (видоизмененный) отдаем анонимную функцию. внутри нее вызываем рендерэнтаир три. берем стейт и передаем его ререндеруэнтир
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Profile.module.css'
-import MyPosts from './MyPosts/MyPosts'
+import MyPostsContainer from './MyPosts/MyPostsContainer'
 import MyProfile from './MyProfile/MyProfile'
 import { connect } from 'react-redux'
 import {addPostActionCreator,updateNewPostTextActionCreator} from '../../redux/profile-reducer'
@@ -8,21 +8,19 @@ import {addPostActionCreator,updateNewPostTextActionCreator} from '../../redux/p
 
 
 function Profile(props) {
-    
     return(
         <div className={classes.content}>
             <MyProfile />
-            <MyPosts 
-            postData={props.profile.postData} 
-            newPostText={props.profile.newPostText} 
-            dispatch={props.addPostActionCreator}
-            updatePost={props.updateNewPostTextActionCreator}
+            <MyPostsContainer store={props.store}
+            // newPostText={props.profile.newPostText} 
+            // dispatch={props.addPostActionCreator}
+            // updatePost={props.updateNewPostTextActionCreator}
             />
         </div>
     )
 }
 const mapStateToProps = (state) =>({
-    profile: state.profileRedusers
+    profilePage: state.profileReducers
 })
 const mapDispatchToProps = {
     addPostActionCreator,

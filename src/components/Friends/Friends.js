@@ -3,7 +3,8 @@ import classes from './Friends.module.css'
 import FriendsList from './FriendsList'
 
 function Friends(props) {
-    let friendsElement = props.friendsItemData.map(f => <FriendsList id={f.id} name={f.name} country={f.country}/>)
+    let state = props.store.getState().friendsPage
+    let friendsElement = state.friendsItemData.map(f => <FriendsList id={f.id} name={f.name} country={f.country}/>)
     return(
         <div className={classes.friends__container}>
             <div className={classes.friends__header}>

@@ -6,7 +6,7 @@ let initialState = {
     { id: 1, message: "Its my first post" },
     { id: 2, message: "Hi,how are you?" },
   ],
-  newPostText: "hue moe",
+  newPostText: "hue moe"
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -43,7 +43,6 @@ export const addPostActionCreator = () => {
 };
 
 export const updateNewPostTextActionCreator = (text) => {
-  console.log(text)
   return {
     type: UPDATE_NEW_POST_TEXT,
     newText: text,
