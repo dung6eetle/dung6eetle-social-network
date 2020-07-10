@@ -6,15 +6,15 @@ import MessagesItem from './MessagesItem.js'
 
 function Dialogs(props) {
     let state = props.dialogsPage 
-    let dialogsElement = state.dialogsItemData.map(d => <DialogsItem  name={d.name} id={d.id}/> )
-    let messagesElement = state.messagesItemData.map(m => <MessagesItem  message={m.message} id={m.id}/> )
+    let dialogsElement = state.dialogsItemData.map(d => <DialogsItem  name={d.name} key={d.id} id={d.id}/> )
+    let messagesElement = state.messagesItemData.map(m => <MessagesItem  message={m.message} key={m.id} id={m.id}/> )
     let newMessageBody = state.newMessageBody
 
     let onNewMessageChange = (event) => {
         let body = event.target.value
         props.updateNewMessageBody(body)
     }
-
+    
     let onSendMessageClick = () => {
         props.sendMessage()
     }

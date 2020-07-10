@@ -20,23 +20,21 @@ let initialState = {
 const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case UPDATE_NEW_MESSAGE_BODY:
-      state.newMessageBody = action.body;
-      return state;
+      return {
+        ...state,
+        newMessageBody: action.body
+      }
     case SEND_MESSAGE:
-      let body = state.newMessageBody;
-      state.messagesItemData.push({ id: 66, message: body });
-      state.newMessageBody = "";
-      return state;
+      let body = state.newMessageBody
+      return {
+        ...state,
+        newMessageBody: "",
+        messagesItemData: [...state.messagesItemData, {id:state.messagesItemData.length+1, message:body}]
+      }
     default:
       // если не найдется нужного экшона есть дефолтный кейс
       return state;
   }
-  //if (action.type === UPDATE_NEW_MESSAGE_BODY ) { // этот шаблон можно заменить switch case
-  //state.newMessageBody = action.body;
-  //} else if (action.type === SEND_MESSAGE) {
-  //let body = state.newMessageBody;
-  //state.newMessageBody = "";
-  //state.messagesItemData.push({ id:66, message: body });
 };
 
 export const updateNewMessageBodyCreator = (body) => {

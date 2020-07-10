@@ -25,10 +25,9 @@ const profileReducer = (state = initialState, action) => {
           ]
       }
     case UPDATE_NEW_POST_TEXT:
-      console.log('action',action)
       return {
           ...state,
-          newPostText:action.newText
+          newPostText: action.newText
       }
     default:
       return state;
@@ -36,7 +35,6 @@ const profileReducer = (state = initialState, action) => {
 };
 
 export const addPostActionCreator = () => {
-  debugger;
   return {
     type: ADD_POST,
   };

@@ -7,18 +7,10 @@ import Post from './Post/Post.js'
 
 function MyPosts(props) {
     
-    let postElement = props.postData.map(p => <Post message={p.message} id={p.id}/> )
+    let postElement = props.postData.map(p => <Post message={p.message} key={p.id} id={p.id}/> )
 
     let newPostElement = React.createRef();
     
-    // let addPost = () => {
-    //   props.dispatch(addPostActionCreator())
-    // }
-    // let onNewText = () => {
-    //   let text = newPostElement.current.value
-    //   props.updatePost(text)
-    // }
-
     let addPost = () => {
       props.addPost() // callback 
     }
