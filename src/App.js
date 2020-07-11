@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import Friends from './components/Friends/Friends'
+import UsersContainer from './components/Users/usersContainer'
 import {BrowserRouter,Route} from 'react-router-dom'
 
 //const Dialogs = React.lazy(() => import ('./components/Dialogs/Dialogs')) /* Так компонента не попадает в общий бандл, используется вместе с Саспенс*/
@@ -17,13 +18,10 @@ function App(props) {
          <Header/>
          <Navbar/>
          <div className="app_wrapper__content">
-            {/* <Route path="/dialogs" component={Dialogs}/>
-            <Route path="/profile" component={Profile}/> */}
-            <Route path="/dialogs" render={() => <DialogsContainer 
-            store={props.store} />}/> 
-            <Route path="/profile" render={() => 
-            <Profile store={props.store} />}/>
+            <Route path="/dialogs" render={() => <DialogsContainer store={props.store}/>}/> 
+            <Route path="/profile" render={() => <Profile store={props.store}/>}/>
             <Route path="/friends" render={() => <Friends store={props.store}/>}/>
+            <Route path="/users" render={()=> <UsersContainer store={props.store}/>}/>
          </div>
       </div>
     </BrowserRouter>

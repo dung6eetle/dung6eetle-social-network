@@ -1,0 +1,18 @@
+.name {
+    font-size: 20px;
+    padding: 5px 5px;
+}
+.status {
+    font-style: italic;
+    font-size: 15px;
+    padding: 1px 5px;
+    
+}
+.location {
+    font-size: 9px;
+    padding: 5px 5px;
+}
+.button button {
+   font-size: 20px;
+   background-color: darkkhaki;
+}
