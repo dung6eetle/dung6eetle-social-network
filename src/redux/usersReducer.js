@@ -2,11 +2,12 @@ const FOLLOW = "FOLLOW"
 const UNFOLLOW = "UNFOLLOW"
 const SET_USERS = "SET_USERS" 
 
+
 let initialState = {
-    users:[
-        {id:1, name: 'Pol', followed:true, status: "IloveUK", location:{city:'London', country:'United Kingdom'}},
-        {id:2, name: 'Uniik', followed:false, status: "IloveRU", location:{city:'Moskow', country:'Russia'}},
-        {id:3, name: 'Rukka', followed:true, status: "IloveUSA", location:{city:'LosANGELS', country:'USA'}}
+     users:[
+    //     {id:1, name: 'Pol', followed:true, status: "IloveUK", location:{city:'London', country:'United Kingdom'}},
+    //     {id:2, name: 'Uniik', followed:false, status: "IloveRU", location:{city:'Moskow', country:'Russia'}},
+    //     {id:3, name: 'Rukka', followed:true, status: "IloveUSA", location:{city:'LosANGELS', country:'USA'}}
     ]
 
     

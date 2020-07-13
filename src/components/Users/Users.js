@@ -1,7 +1,15 @@
 import React from 'react'
 import classes from './users.module.css'
+import * as Axios from 'axios'
 
 function Users(props) {
+    if (props.users.length === 0) {
+        Axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => 
+        props.setUsers(response.data.items)
+      )
+    }
+    
+    
     return (
         <div>
            {
@@ -14,7 +22,7 @@ function Users(props) {
                           {u.status}
                       </div>
                       <div className={classes.location}>
-                          {u.location.city},{u.location.country}
+                          {"u.location.city"},{"u.location.country"}
                       </div>
                       <div className={classes.button}>
                             {u.followed ? 
