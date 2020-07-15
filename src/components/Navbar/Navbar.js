@@ -6,16 +6,16 @@ function Navbar() {
     return(
         <nav className={classes.nav}>
             <div className={classes.item}>
-                <NavLink to="../Profile/Profile.js" activeClassName={classes.activeLink}>Profile</NavLink>
+                <NavLink to="../Profile/" activeClassName={classes.activeLink}>Profile</NavLink>
             </div>
             <div className={classes.item}>
-                <NavLink to="../Dialogs/Dialogs.js" activeClassName={classes.activeLink}>Messages</NavLink>
+                <NavLink to="../Dialogs/" activeClassName={classes.activeLink}>Messages</NavLink>
             </div>
             <div className={classes.item}>
-                <NavLink to ="../Users/Users.js" activeClassName={classes.activeLink}>Users</NavLink>
+                <NavLink to ="../Users/" activeClassName={classes.activeLink}>Users</NavLink>
             </div>
             <div className={classes.item}>
-                <NavLink to ="../Friends/Friends.js" activeClassName={classes.activeLink}>Friends</NavLink>
+                <NavLink to ="../Friends/" activeClassName={classes.activeLink}>Friends</NavLink>
             </div>
             <div className={classes.item}>
                 <a>Music</a>
