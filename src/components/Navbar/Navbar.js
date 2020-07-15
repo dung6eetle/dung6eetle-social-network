@@ -12,6 +12,9 @@ function Navbar() {
                 <NavLink to="../Dialogs/Dialogs.js" activeClassName={classes.activeLink}>Messages</NavLink>
             </div>
             <div className={classes.item}>
+                <NavLink to ="../Users/Users.js" activeClassName={classes.activeLink}>Users</NavLink>
+            </div>
+            <div className={classes.item}>
                 <NavLink to ="../Friends/Friends.js" activeClassName={classes.activeLink}>Friends</NavLink>
             </div>
             <div className={classes.item}>
