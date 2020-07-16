@@ -7,7 +7,7 @@ import MyProfile from './MyProfile/MyProfile'
 function Profile(props) {
     return(
         <div className={classes.content}>
-            <MyProfile />
+            <MyProfile profile={props.profile}/>
             <MyPostsContainer store={props.store}
             // newPostText={props.profile.newPostText} 
             // dispatch={props.addPostActionCreator}

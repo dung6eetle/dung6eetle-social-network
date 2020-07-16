@@ -1,8 +1,15 @@
 import React from 'react'
 import classes from './MyProfile.module.css'
+import Preloader from '../../common/Preloader'
 
-function MyProfile() {
-    return (
+function MyProfile(props) {
+    if (!props.profile) {
+        return <Preloader/>
+    }
+    if (!props.profile.photos) {
+        return <Preloader/>
+    }
+    return (<>
         <div className={classes.myProfile__container}>
           <div className={classes.myProfile__title}>
               <h1>Artyoma Pupkins</h1>
@@ -18,6 +25,21 @@ function MyProfile() {
               <p>ABOUT ME..</p>
           </div>
         </div>
+        <div className={classes.profileUserContainer}>
+            <div className={classes.fullName}>
+                <p>{props.profile.fullName}</p>
+            </div>
+            <div className={classes.userImg}>
+                <img src={props.profile.photos.large}></img>
+            </div>
+            <div className={classes.userAboutMe}>
+                <p>{props.profile.aboutMe}</p>
+            </div>
+            <div className={classes.userLookingForAJobDescription}>
+                <p>{props.profile.lookingForAJob}</p>
+            </div>
+        </div>
+       </> 
     )
 }
 export default MyProfile
