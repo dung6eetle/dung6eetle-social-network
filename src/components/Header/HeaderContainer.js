@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./Header.module.css";
 import Header from './Header'
 import * as Axios from 'axios'
 import { connect } from "react-redux";
