@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 //import Loader from './Loader'
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import Friends from './components/Friends/Friends'
@@ -15,7 +15,7 @@ function App(props) {
   return (
       <BrowserRouter>
       <div className="app_wrapper">
-         <Header/>
+         <HeaderContainer/>
          <Navbar/>
          <div className="app_wrapper__content">
             <Route path="/dialogs" render={() => <DialogsContainer store={props.store}/>}/> 

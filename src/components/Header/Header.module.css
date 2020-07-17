@@ -2,8 +2,23 @@
     grid-area: h;
     background-color: #F8D552;
 }
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .header__logo {
     padding-top: 15px;
     width: 110px;
     height: 58px;
+}
+.loginBlock {
+    float: right;
+    padding: 35px 15px;
+}
+.loginBlock a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color:black;
 }
