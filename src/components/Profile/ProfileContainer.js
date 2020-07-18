@@ -2,39 +2,39 @@ import React from "react";
 import classes from "./Profile.module.css";
 import { connect } from "react-redux";
 import Profile from "./Profile";
-import * as Axios from 'axios'
-import {addPostActionCreator, updateNewPostTextActionCreator, setUserProfileAC} from "../../redux/profile-reducer";
+import * as Axios from "axios";
+import {
+  addPostActionCreator,
+  updateNewPostTextActionCreator,
+  setUserProfileAC,
+} from "../../redux/profile-reducer";
 import { withRouter } from "react-router-dom";
-
+import { getProfile } from "../../api/api";
 
 class ProfileContainer extends React.Component {
   componentDidMount() {
-   let userId = this.props.match.params.userId
-   if (!userId) {
-       userId = 2
-   }
-    Axios.get(
-        `https://social-network.samuraijs.com/api/1.0/profile/` + userId
-      ).then(response => {
-          this.props.setUserProfile(response.data)
-      })
+    let userId = this.props.match.params.userId;
+    if (!userId) {
+      userId = 2;
+    }
+    getProfile(userId).then((data) => {
+      this.props.setUserProfile(data);
+    });
   }
   render() {
-    return <Profile {...this.props} profile={this.props.profile}/>;
+    return <Profile {...this.props} profile={this.props.profile} />;
   }
 }
 let mapStateToProps = (state) => {
-    return {
-        profile: state.profilePage.profile
-    }
+  return {
+    profile: state.profilePage.profile,
+  };
 };
 
-let WithUrlDataComponent = withRouter(ProfileContainer)
+let WithUrlDataComponent = withRouter(ProfileContainer);
 
 export default connect(mapStateToProps, {
-   addPost: addPostActionCreator,
-   updateNewPostText: updateNewPostTextActionCreator,
-  setUserProfile: setUserProfileAC
+  addPost: addPostActionCreator,
+  updateNewPostText: updateNewPostTextActionCreator,
+  setUserProfile: setUserProfileAC,
 })(WithUrlDataComponent);
-
-
