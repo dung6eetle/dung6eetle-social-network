@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import Friends from './components/Friends/Friends'
 import UsersContainer from './components/Users/usersContainer'
+import Login from './components/Login/Login'
 import {BrowserRouter,Route} from 'react-router-dom'
 import ProfileContainer from './components/Profile/ProfileContainer';
 
@@ -22,6 +23,7 @@ function App(props) {
             <Route path="/profile/:userId?" render={() => <ProfileContainer store={props.store}/>}/>
             <Route path="/friends" render={() => <Friends store={props.store}/>}/>
             <Route path="/users" render={()=> <UsersContainer store={props.store}/>}/>
+            <Route path="/login" render={()=> <Login/>}/>
          </div>
       </div>
     </BrowserRouter>
