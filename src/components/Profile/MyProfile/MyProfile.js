@@ -1,6 +1,8 @@
 import React from 'react'
 import classes from './MyProfile.module.css'
 import Preloader from '../../common/Preloader'
+import userPhotoAnonimus from '../../../assets/anonymous.svg'
+
 
 function MyProfile(props) {
     if (!props.profile) {
@@ -13,7 +15,6 @@ function MyProfile(props) {
         <div className={classes.myProfile__container}>
           <div className={classes.myProfile__title}>
               <h1>Artyoma Pupkins</h1>
-              <p>age:23</p>
           </div>
           <div className={classes.itemPhoto}>
              <svg width="303" height="385" viewBox="0 0 303 385" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,20 +26,21 @@ function MyProfile(props) {
               <p>ABOUT ME..</p>
           </div>
         </div>
-        <div className={classes.profileUserContainer}>
-            <div className={classes.fullName}>
-                <p>{props.profile.fullName}</p>
-            </div>
-            <div className={classes.userImg}>
-                <img src={props.profile.photos.large}></img>
-            </div>
-            <div className={classes.userAboutMe}>
-                <p>{props.profile.aboutMe}</p>
-            </div>
-            <div className={classes.userLookingForAJobDescription}>
-                <p>{props.profile.lookingForAJob}</p>
-            </div>
+
+        <div className={classes.myProfile__container}>
+          <div className={classes.myProfile__title}>
+              <h1>{props.profile.fullName}</h1>
+               <p>{props.profile.lookingForAJob ? props.profile.lookingForAJob :  <p></p> }</p>
+          </div>
+          <div className={classes.itemPhoto}>
+            <img src={props.profile.photos.large != null ? props.profile.photos.small : userPhotoAnonimus}>
+            </img>
+          </div>
+          <div className={classes.itemDiscription}>
+             <p>{props.profile.aboutMe != null ? props.profile.aboutMe : <p>ABOUT ME..</p>}</p>
+          </div>
         </div>
+        
        </> 
     )
 }

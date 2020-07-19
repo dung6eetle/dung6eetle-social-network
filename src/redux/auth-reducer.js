@@ -1,10 +1,12 @@
+import { authApi } from "../api/api";
+
 const SET_USER_DATA = "SET_USER_DATA";
 
 let initialState = {
-    id: null,
-    login: null,
-    email: null,
-    isAuth: false
+  id: null,
+  login: null,
+  email: null,
+  isAuth: false,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -13,10 +15,9 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.data,
-        isAuth: true
-      }
+        isAuth: true,
+      };
     default:
-      // если не найдется нужного экшона есть дефолтный кейс
       return state;
   }
 };
@@ -24,10 +25,19 @@ const authReducer = (state = initialState, action) => {
 export const setAuthUserData = (id, login, email) => {
   return {
     type: SET_USER_DATA,
-    data:{id,email,login}
+    data: { id, email, login },
   };
 };
 
+// THUNK_CREATORs
 
+export const getAuthUserData = () => (dispatch) => {
+  authApi.me().then((data) => {
+    if (data.resultCode === 0) {
+      let { id, login, email } = data.data;
+      dispatch(setAuthUserData(id, login, email));
+    }
+  });
+};
 
 export default authReducer;

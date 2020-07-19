@@ -12,10 +12,19 @@
     
 }
 .itemPhoto {
-    
+    width: 303px;
+    height: 385px;
 }
 .itemDiscription {
     font-size: 25px;
     font-style: italic;
     font-weight: 300;
+}
+.userImg {
+    
+}
+.fullName  {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
 }

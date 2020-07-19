@@ -6,10 +6,10 @@ import * as Axios from "axios";
 import {
   addPostActionCreator,
   updateNewPostTextActionCreator,
-  setUserProfileAC,
+  getUserProfile,
 } from "../../redux/profile-reducer";
 import { withRouter } from "react-router-dom";
-import { getProfile } from "../../api/api";
+import { usersApi } from "../../api/api";
 
 class ProfileContainer extends React.Component {
   componentDidMount() {
@@ -17,9 +17,7 @@ class ProfileContainer extends React.Component {
     if (!userId) {
       userId = 2;
     }
-    getProfile(userId).then((data) => {
-      this.props.setUserProfile(data);
-    });
+    this.props.getUserProfile(userId) //Thunk
   }
   render() {
     return <Profile {...this.props} profile={this.props.profile} />;
@@ -36,5 +34,5 @@ let WithUrlDataComponent = withRouter(ProfileContainer);
 export default connect(mapStateToProps, {
   addPost: addPostActionCreator,
   updateNewPostText: updateNewPostTextActionCreator,
-  setUserProfile: setUserProfileAC,
+  getUserProfile
 })(WithUrlDataComponent);
