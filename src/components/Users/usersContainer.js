@@ -2,8 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import Users from "./Users";
 import Preloader from "../common/Preloader";
-
-
 import {
   follow,
   unfollow,
@@ -19,7 +17,6 @@ class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.getUsers(this.props.currentPage, this.props.pageSize);
     // this.props.toggleIsFetching(true);
-
     // getUsers(this.props.currentPage, this.props.pageSize).then((data) => {
     //   this.props.toggleIsFetching(false);
     //   this.props.setUsers(data.items);
@@ -30,7 +27,6 @@ class UsersContainer extends React.Component {
     this.props.getUsers(pageNumber, this.props.pageSize);
     // this.props.setCurrentPage(pageNumber);
     // this.props.toggleIsFetching(true);
-
     // getUsers(pageNumber, this.props.pageSize).then((data) => {
     //   this.props.toggleIsFetching(false);
     //   this.props.setUsers(data.items);

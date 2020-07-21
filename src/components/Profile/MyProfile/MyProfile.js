@@ -5,6 +5,7 @@ import userPhotoAnonimus from '../../../assets/anonymous.svg'
 import sunny from '../../../assets/sun.svg'
 import watermelon from '../../../assets/watermelon.svg'
 import myPhoto from '../../../assets/hacker.svg'
+import ProfileStatus from './ProfileStatus'
 
 
 function MyProfile(props) {
@@ -20,6 +21,7 @@ function MyProfile(props) {
               Artyoma Pupkins
               <span><img className={classes.imgStatus} src={watermelon}></img></span>
           </div>
+          <ProfileStatus status={'my static status'}/>
           <div className={classes.itemPhoto}>
              <img className={classes.myPhoto} src={myPhoto}></img>
           </div>

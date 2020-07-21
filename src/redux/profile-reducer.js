@@ -1,4 +1,4 @@
-import { usersApi } from "../api/api";
+import { profileApi } from "../api/api";
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
@@ -63,7 +63,7 @@ export const setUserProfileAC = (profile) => {
 //THUNKs
 
 export const getUserProfile = (userId) => (dispatch) => {
-  usersApi.getProfile(userId).then((data) => {
+  profileApi.getProfile(userId).then((data) => {
    dispatch(setUserProfileAC(data));
   });
 }

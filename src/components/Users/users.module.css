@@ -34,11 +34,16 @@
     height: 50px;
 }
 .usersPageCount {
-    font-size: 25px;
+    font-size: 15px;
     margin-left: 100px;
 }
 .selectedPage {
     font-weight: bold;
+    font-size: 18px;
+}
+.defaultPage {
+    font-size: 15px;
+    padding-left: 1px;
 }
 .preloader {
     padding: 50px 50px

@@ -26,6 +26,12 @@ export const usersApi =  {
     )
   },
   getProfile(userId) {
+    console.warn('Устарел!')
+    return profileApi.getProfile(userId)
+  }
+}
+export const profileApi =  {
+  getProfile(userId) {
     return instance.get(
       `profile/` + userId
     ).then((response) => {

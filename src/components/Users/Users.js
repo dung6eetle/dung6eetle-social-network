@@ -2,8 +2,6 @@ import React from "react";
 import userPhoto from "../../assets/imgBug.png";
 import classes from "./users.module.css";
 import { NavLink } from "react-router-dom";
-import Axios from "axios";
-import { usersApi } from "../../api/api";
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -16,9 +14,9 @@ let Users = (props) => {
       <div className={classes.usersPageCount}>
         {pages.map((p) => {
           return (
-            <span
+            <span 
               key={p.id}
-              className={props.currentPage === p && classes.selectedPage}
+              className={props.currentPage === p ? classes.selectedPage : classes.defaultPage}
               onClick={(e) => {
                 props.onPageChanged(p);
               }}
