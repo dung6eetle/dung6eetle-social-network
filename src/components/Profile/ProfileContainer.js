@@ -2,8 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile";
 import {
-  addPostActionCreator,
-  updateNewPostTextActionCreator,
   getStatus,
   updateStatus,
   getUserProfile,
@@ -16,11 +14,10 @@ class ProfileContainer extends React.Component {
   componentDidMount() {
     let userId = this.props.match.params.userId;
     if (!userId) {
-      userId = 2;
+      userId = 19;
     }
     this.props.getUserProfile(userId); //Thunk
-    // this.props.getStatus(userId);
-    console.log('statusMount', this.status)
+    this.props.getStatus(userId); //Thunk
   }
   
   render() {

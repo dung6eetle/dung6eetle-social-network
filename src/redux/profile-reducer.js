@@ -12,8 +12,7 @@ let initialState = {
   ],
   newPostText: "",
   profile: null,
-  status: "" ,
-  
+  status: "",
 };
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -32,15 +31,15 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         newPostText: action.newText,
       };
-    case SET_USER_PROFILE:
-      return {
-        ...state,
-        profile: action.profile,
-      };
     case SET_STATUS:
       return {
         ...state,
         status: action.status,
+      };
+    case SET_USER_PROFILE:
+      return {
+        ...state,
+        profile: action.profile,
       };
     default:
       return state;
@@ -65,10 +64,10 @@ export const setUserProfileAC = (profile) => {
     profile,
   };
 };
-export const setStatus = (userId) => {
+export const setStatus = (status) => {
   return {
     type: SET_STATUS,
-    userId,
+    status,
   };
 };
 
@@ -85,11 +84,11 @@ export const getStatus = (userId) => (dispatch) => {
   });
 };
 export const updateStatus = (status) => (dispatch) => {
-  profileApi.updateStatus(status).then((response)=> {
+  profileApi.updateStatus(status).then((response) => {
     if (response.data.resultCode === 0) {
-      dispatch(setStatus(status))
+      dispatch(setStatus(status));
     }
-  })
-}
+  });
+};
 
 export default profileReducer;

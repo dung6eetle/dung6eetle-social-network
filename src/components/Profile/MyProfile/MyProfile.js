@@ -18,21 +18,21 @@ function MyProfile(props) {
     }
     
     return (<>
-        {/* <div className={classes.myProfile__container}>
+        <div className={classes.myProfile__container}>
           <div className={classes.myProfile__title}>
               Artyoma Pupkins
               <span><img className={classes.imgStatus} src={watermelon}></img></span>
           </div>
-
-          <ProfileStatus status={props.status}/> 
-          
+          <div className={classes.status}>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+          </div>
           <div className={classes.itemPhoto}>
              <img className={classes.myPhoto} src={myPhoto}></img>
           </div>
           <div className={classes.itemDiscription}>
               <p>ABOUT ME..</p>
           </div>
-        </div> */}
+        </div>
 
         <div className={classes.myProfile__container}>
           <div className={classes.myProfile__title}>
@@ -40,7 +40,7 @@ function MyProfile(props) {
               <img className={classes.imgStatus} src={sunny}/>
           </div>
           <div className={classes.status}>
-            <ProfileStatus status={props.status}/> !!!
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
           </div>
           <div className={classes.itemPhoto}>
             <img src={props.profile.photos.large != null ? props.profile.photos.small : userPhotoAnonimus}/>

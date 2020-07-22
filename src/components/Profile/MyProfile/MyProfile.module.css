@@ -38,5 +38,6 @@
 }
 .status {
     font-size: 20px;
-    color: rgb(187, 10, 10);
+    color: rgb(3, 0, 0);
+    padding: 10px 0px;
 }
