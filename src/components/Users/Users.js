@@ -40,7 +40,6 @@ let Users = (props) => {
             <div className={classes.name}>{u.name}</div>
             <div className={classes.status}>{u.status}</div>
             <div className={classes.location}>
-              {"u.location.city"},{"u.location.country"}
             </div>
             <div className={classes.button}>
               {u.followed ? 

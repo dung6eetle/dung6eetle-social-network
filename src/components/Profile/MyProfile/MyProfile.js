@@ -9,35 +9,41 @@ import ProfileStatus from './ProfileStatus'
 
 
 function MyProfile(props) {
+  
     if (!props.profile) {
         return <Preloader/>
     }
     if (!props.profile.photos) {
         return <Preloader/>
     }
+    
     return (<>
-        <div className={classes.myProfile__container}>
+        {/* <div className={classes.myProfile__container}>
           <div className={classes.myProfile__title}>
               Artyoma Pupkins
               <span><img className={classes.imgStatus} src={watermelon}></img></span>
           </div>
-          <ProfileStatus status={'my static status'}/>
+
+          <ProfileStatus status={props.status}/> 
+          
           <div className={classes.itemPhoto}>
              <img className={classes.myPhoto} src={myPhoto}></img>
           </div>
           <div className={classes.itemDiscription}>
               <p>ABOUT ME..</p>
           </div>
-        </div>
+        </div> */}
 
         <div className={classes.myProfile__container}>
           <div className={classes.myProfile__title}>
               {props.profile.fullName}
-               <span><img className={classes.imgStatus} src={sunny}></img></span>
+              <img className={classes.imgStatus} src={sunny}/>
+          </div>
+          <div className={classes.status}>
+            <ProfileStatus status={props.status}/> !!!
           </div>
           <div className={classes.itemPhoto}>
-            <img src={props.profile.photos.large != null ? props.profile.photos.small : userPhotoAnonimus}>
-            </img>
+            <img src={props.profile.photos.large != null ? props.profile.photos.small : userPhotoAnonimus}/>
           </div>
           <div className={classes.itemDiscription}>
              <p>{props.profile.aboutMe != null ? props.profile.aboutMe : <p>ABOUT ME..</p>}</p>

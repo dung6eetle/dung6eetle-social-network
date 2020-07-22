@@ -1,6 +1,7 @@
 .nav {
     grid-area: n;
     background-color: rgb(70, 189, 219);
+    min-height: 100vh;
 }
 .item {
     font-size: 28px;

@@ -36,3 +36,7 @@
     width: 303px;
     height: 330px;
 }
+.status {
+    font-size: 20px;
+    color: rgb(187, 10, 10);
+}

@@ -9,8 +9,10 @@
 }
 .status {
     font-style: italic;
-    font-size: 15px;
-    padding: 1px 5px;
+    font-size: 12px;
+    padding: 2px 5px;
+    background-color: rgb(189, 255, 248);
+    display: inline-block;
     
 }
 .location {
@@ -19,11 +21,15 @@
 }
 .button {
     padding-bottom: 10px;
+    
 }
 .button button {
-   font-size: 20px;
-   background-color: darkkhaki;
-   padding: 5px 15px;
+   font-size: 14px;
+   background-color: rgb(118, 196, 238);
+   padding: 5px 10px;
+   text-transform: uppercase;
+   font-weight: 700;
+   color: black;
 
 }
 .userImgContainer {
