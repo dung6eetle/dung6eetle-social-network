@@ -8,13 +8,6 @@ function MyPosts(props) {
     <Post message={p.message} key={p.id} id={p.id} />
   ));
 
-  // let addPost = () => {
-  //   props.addPost(); // callback
-  // };
-  // let onNewText = () => {
-  //   let text = newPostElement.current.value;
-  //   props.updateNewPostText(text); //callback
-  // };
   let addPostElement = (values) => {
     props.addPost(values.newPostText)
   }
@@ -27,7 +20,7 @@ function MyPosts(props) {
         <MyPostsFormRedux onSubmit={addPostElement}/>
         <div className="post__like">
           <svg
-            height="20pt"
+            height="15pt"
             viewBox="0 -20 464 464"
             width="20pt"
             xmlns="http://www.w3.org/2000/svg"
