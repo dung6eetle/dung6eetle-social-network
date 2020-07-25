@@ -6,6 +6,7 @@ import sunny from '../../../assets/sun.svg'
 import watermelon from '../../../assets/watermelon.svg'
 import myPhoto from '../../../assets/hacker.svg'
 import ProfileStatus from './ProfileStatus'
+import MyProfileStatus from './MyProfileStatus'
 
 
 function MyProfile(props) {
@@ -24,7 +25,7 @@ function MyProfile(props) {
               <span><img className={classes.imgStatus} src={watermelon}></img></span>
           </div>
           <div className={classes.status}>
-            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+            <MyProfileStatus myStatus={props.myStatus} updateStatus={props.updateStatus}/>
           </div>
           <div className={classes.itemPhoto}>
              <img className={classes.myPhoto} src={myPhoto}></img>

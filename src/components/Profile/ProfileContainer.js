@@ -21,14 +21,14 @@ class ProfileContainer extends React.Component {
   }
   
   render() {
-    console.log('statusСont:', this.props.status)
-    return <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />; 
+    return <Profile {...this.props} profile={this.props.profile} status={this.props.status} myStatus={this.props.myStatus} updateStatus={this.props.updateStatus} />; 
   }
 }
 let mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
-    status: state.profilePage.status
+    status: state.profilePage.status,
+    myStatus: state.profilePage.myStatus
   };
 };
 //Compose

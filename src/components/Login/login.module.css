@@ -1,0 +1,72 @@
+.loginFormContainer {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 50px 100px;
+  background-color: rgb(251, 250, 181);
+  display: inline-block;
+  border-radius: 15px;
+}
+.Title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #030303;
+}
+.loginForm {
+  padding: 10px 0px;
+}
+.inputLogin {
+  height: 35px;
+  font-size: 18px;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  outline: none;
+}
+.inputLogin:focus {
+  border: 1px solid rgb(230, 231, 231);
+}
+.inputLogin:focus::-webkit-input-placeholder {
+    color: transparent
+}
+.inputPass {
+  height: 35px;
+  font-size: 18px;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  outline: none;
+}
+.inputPass:focus {
+  border: 1px solid rgb(230, 231, 231);
+}
+.inputPass:focus::-webkit-input-placeholder {
+    color: transparent
+}
+.passwordForm {
+  padding: 10px 0px;
+}
+.rememberMeForm {
+  padding: 10px 0px;
+  color: #030303;
+  font-size: 16px;
+}
+.inputRemember {
+    font-size: 16px;
+    
+}
+.buttonLogin {
+    background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

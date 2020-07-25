@@ -6,7 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import Friends from './components/Friends/Friends'
 import UsersContainer from './components/Users/usersContainer'
-import Login from './components/Login/Login'
+import Login from './components/Login/Login.js'
 import {BrowserRouter,Route} from 'react-router-dom'
 import ProfileContainer from './components/Profile/ProfileContainer';
 
