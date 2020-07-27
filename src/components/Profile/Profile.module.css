@@ -1,6 +1,6 @@
 .content {
     display: flex;
     background-color: rgb(191, 240, 135);
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }

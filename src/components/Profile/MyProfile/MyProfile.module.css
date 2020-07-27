@@ -1,21 +1,33 @@
+.profileContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 
-.myProfile__container {
+.leftElementContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-left: 15px;
+    padding-left: 30px;
+    padding-right: 200px;
 }
-.myProfile__title {
-    font-size: 40px;
+.rightElementContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 30px;
+    padding-right: 50px;
+}
+.myTitle {
+    font-size: 30px;
     font-weight: 700;
     color: rgb(0, 0, 0);
-    padding-top: 20px;
+    padding-top: 12px;
     padding-bottom: 15px;
-    
 }
-.itemPhoto {
-    width: 303px;
-    height: 385px;
+.itemPhoto img {
+    width: 280px;
+    height: 300px;
 }
 .itemDiscription {
     font-size: 25px;
@@ -36,8 +48,14 @@
     width: 303px;
     height: 330px;
 }
+.imgAnon {
+    width: 303px;
+    height: 320px;
+}
 .status {
-    font-size: 20px;
-    color: rgb(3, 0, 0);
+    font-size: 25px;
+    font-weight: 500;
+    font-style: italic;
+    color: rgb(92, 91, 91);
     padding: 10px 0px;
 }

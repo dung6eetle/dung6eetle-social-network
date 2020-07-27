@@ -1,19 +1,47 @@
-
-.posts {
+.content {
    display: flex;
-   padding: 0px 30px;
-   flex-direction: column-reverse;
-}
-.item {
-   color: darkblue;
-   font-size: 20px;
    flex-direction: column;
-   padding: 20px 10px;
+}
+.posts {
+  display: flex;
+  padding: 0px 30px;
+  flex-direction: column-reverse;
+}
+.postElementContainer {
+   max-width: 200px;
+   background-color: #e1f669;
+   border: none;
+   color: white;
+}
+.postElement {
+   background-color: white; 
+   color: black; 
+   border: 2px solid #e1f669;
 }
 .post__like {
-   width: 30px;
-   height:30px;
+  width: 30px;
+  height: 30px;
 }
-.posts__header {
-   font-size: 30px;
+.postsHeader {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  padding-top: 20px;
+  padding-left: 30px;
 }
+.inputPost {
+   min-height: 75px;
+   font-size: 18px;
+   border: 1px solid #ffffff;
+   border-radius: 3px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   outline: none;
+ }
+ .inputPost:focus {
+   border: 1px solid rgb(230, 231, 231);
+ }
+ .inputPost:focus::-webkit-input-placeholder {
+     color: transparent
+ }
