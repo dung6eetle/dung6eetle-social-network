@@ -45,12 +45,13 @@ export const profileApi =  {
 }
 export const authApi = {
   me () {
-    return instance.get(`auth/me`).then((response) => {
-      return response.data;
-    });
+    return instance.get(`auth/me`)
   },
-  login () {
-    return instance.post(`auth/login`)
+  login (email, password, rememberMe) {
+    return instance.post(`auth/login`, {email, password, rememberMe})
+  },
+  logout() {
+    return instance.delete(`auth/login`)
   }
 }
 

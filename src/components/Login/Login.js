@@ -1,7 +1,9 @@
 import React from "react";
 import classes from "./login.module.css";
-// import { Form } from 'react-final-form'
 import { Field, reduxForm } from "redux-form";
+import { connect } from "react-redux";
+import {login } from "../../redux/auth-reducer";
+import { Redirect } from "react-router-dom";
 
 const LoginForm = (props) => {
   return (
@@ -13,11 +15,10 @@ const LoginForm = (props) => {
       </div>
       <div className={classes.loginForm}>
         <Field
-          name={"login"}
+          name={"email"}
           component={"input"}
           className={classes.inputLogin}
-          type={"text"}
-          placeholder={"Login"}
+          placeholder={"Email"}
         />
       </div>
       <div className={classes.passwordForm}>
@@ -25,7 +26,7 @@ const LoginForm = (props) => {
           name={"password"}
           component={"input"}
           className={classes.inputPass}
-          type={"text"}
+          type={"password"}
           placeholder={"Password"}
         />
       </div>
@@ -47,10 +48,19 @@ const LoginReduxForm = reduxForm({
   form: "login",
 })(LoginForm);
 
-const Login = () => {
+const Login = (props) => {
   const onSubmit = (formData) => {
     console.log("data", formData);
+    props.login(formData.email, formData.password, formData.rememberMe);
   };
-  return <LoginReduxForm onSubmit={onSubmit} />;
+  
+  if (props.isAuth) {
+    return <Redirect to={'/profile'}/>
+  } return <LoginReduxForm onSubmit={onSubmit} />;
 };
-export default Login;
+
+const mapStateToProps = (state) => ({
+  isAuth: state.auth.isAuth
+})
+
+export default connect (mapStateToProps , {login})(Login) 
