@@ -6,9 +6,11 @@ import profileReducer from "./profile-reducer";
 import friendsReducer from "./friends-reducer";
 import usersReducer from "./usersReducer"
 import authReducer from "./auth-reducer";
+import appReducer from "./app-reducer";
 
 
 let reducers = combineReducers({
+    app: appReducer,
     dialogsPage: dialogsReducer,
     profilePage: profileReducer,
     friendsPage: friendsReducer,

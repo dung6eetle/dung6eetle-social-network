@@ -1,6 +1,6 @@
 .content {
+    min-height: 100vh;;
     display: flex;
-    background-color: rgb(191, 240, 135);
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: rgb(5, 30, 37);
+    flex-direction: row;
 }

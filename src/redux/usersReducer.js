@@ -10,7 +10,7 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
 
 let initialState = {
   users: [],
-  pageSize: 5,
+  pageSize: 4,
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: false,
@@ -22,7 +22,6 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         users: state.users.map((u) => {
-          console.log("user follow", u, action);
           if (u.id === action.userId) {
             return { ...u, followed: true };
           }
@@ -33,7 +32,6 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         users: state.users.map((u) => {
-          console.log("user unfollow", u, action);
           if (u.id === action.userId) {
             return {
               ...u,

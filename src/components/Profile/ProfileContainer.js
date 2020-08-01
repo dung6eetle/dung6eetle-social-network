@@ -14,30 +14,40 @@ class ProfileContainer extends React.Component {
   componentDidMount() {
     let userId = this.props.match.params.userId;
     if (!userId) {
-      userId = 19;
+      userId = this.props.authorizedUserId;
+      debugger;
     }
     this.props.getUserProfile(userId); //Thunk
     this.props.getStatus(userId); //Thunk
   }
-  
+
   render() {
-    return <Profile {...this.props} profile={this.props.profile} status={this.props.status} myStatus={this.props.myStatus} updateStatus={this.props.updateStatus} />; 
+    return (
+      <Profile
+        {...this.props}
+        profile={this.props.profile}
+        status={this.props.status}
+        myStatus={this.props.myStatus}
+        updateStatus={this.props.updateStatus}
+      />
+    );
   }
 }
 let mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
     status: state.profilePage.status,
-    myStatus: state.profilePage.myStatus
+    myStatus: state.profilePage.myStatus,
+    authorizedUserId: state.auth.userId,
+    isAuth: state.auth.isAuth,
   };
 };
 //Compose
 export default compose(
-  connect(mapStateToProps,{getUserProfile, updateStatus, getStatus}),
+  connect(mapStateToProps, { getUserProfile, updateStatus, getStatus }),
   withRouter,
   withAuthRedirect
 )(ProfileContainer);
-
 
 // let AuthRedirectComponent = withAuthRedirect(ProfileContainer); //HOC REDIRECT
 // let WithUrlDataComponent = withRouter(AuthRedirectComponent); //HOC ROUTER

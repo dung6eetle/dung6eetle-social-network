@@ -1,24 +1,38 @@
 .header {
     grid-area: h;
-    background-color: #F8D552;
+    background-color: #000000;
 }
 .headerContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 .header__logo {
-    padding-top: 15px;
-    width: 110px;
-    height: 58px;
+    padding-right: 195px;
+}
+.header__logo img {
+    padding-top: 25px;
+    width: auto;
+    height: 150px;
 }
 .loginBlock {
-    float: right;
-    padding: 35px 15px;
+    font-family: "Krona One";
+    color: rgb(230, 220, 220);
+    font-size: 15px; 
+    padding: 3px 15px;
 }
-.loginBlock a {
-    font-size: 20px;
-    font-weight: bold;
+.userName {
+    font-family: "Krona One";
+    font-size: 15px;
+    color: rgb(230, 220, 220);
+}
+.buttonLogout {
+    font-family: "Krona One";
+    font-size: 15px; 
+}
+.loginLink {
+    color: rgb(230, 220, 220);
+    font-family: "Krona One";
+    font-size: 15px;
     text-decoration: none;
-    color:black;
 }

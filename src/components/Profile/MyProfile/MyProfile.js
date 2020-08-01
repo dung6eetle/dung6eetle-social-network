@@ -1,12 +1,10 @@
 import React from "react";
 import classes from "./MyProfile.module.css";
 import Preloader from "../../common/Preloader";
-import userPhotoAnonimus from "../../../assets/anonymous.svg";
-import sunny from "../../../assets/sun.svg";
 import watermelon from "../../../assets/watermelon.svg";
 import myPhoto from "../../../assets/hacker.svg";
 import ProfileStatus from "./ProfileStatus";
-import MyProfileStatus from "./MyProfileStatus";
+
 
 function MyProfile(props) {
   if (!props.profile) {
@@ -19,31 +17,10 @@ function MyProfile(props) {
   return (
     <>
       <div className={classes.profileContainer}>
-        <div className={classes.leftElementContainer}>
-          <div className={classes.myTitle}>
-            Artyoma Pupkins
-            <span>
-              <img className={classes.imgStatus} src={watermelon}></img>
-            </span>
-          </div>
-          <div className={classes.status}>
-            <MyProfileStatus
-              myStatus={props.myStatus}
-              updateStatus={props.updateStatus}
-            />
-          </div>
-          <div className={classes.itemPhoto}>
-            <img className={classes.myPhoto} src={myPhoto}></img>
-          </div>
-          <div className={classes.itemDiscription}>
-            <p>ABOUT ME..</p>
-          </div>
-        </div>
-
         <div className={classes.rightElementContainer}>
           <div className={classes.myTitle}>
             {props.profile.fullName}
-            <img className={classes.imgStatus} src={sunny} />
+            <img className={classes.imgStatus} src={watermelon} />
           </div>
           <div className={classes.status}>
             <ProfileStatus
@@ -56,7 +33,7 @@ function MyProfile(props) {
               src={
                 props.profile.photos.large != null
                   ? props.profile.photos.small
-                  : userPhotoAnonimus
+                  : myPhoto
               }
             />
           </div>

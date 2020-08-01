@@ -1,4 +1,8 @@
 import React from "react";
+import { maxLengthCreator } from "../../utils/validators/validators";
+import { Field, reduxForm } from "redux-form";
+
+const maxLength15 = maxLengthCreator(15);
 
 class MyProfileStatus extends React.Component {
   state = {
@@ -16,28 +20,31 @@ class MyProfileStatus extends React.Component {
     });
   };
   onStatusChange = (e) => {
-      this.setState({
-          myStatus: e.currentTarget.value
-      })
-  }
+    this.setState({
+      myStatus: e.currentTarget.value,
+    });
+  };
+
   render() {
     return (
-      <div>
+      <form>
         {!this.state.editMode && (
           <span onDoubleClick={this.activateEditMode}>
             {this.props.myStatus || "no status"}
           </span>
         )}
         {this.state.editMode && (
-          <input
+          <Field
+            validate={maxLength15}
             onChanged={this.onStatusChange}
             autoFocus={true}
             onBlur={this.disabledEditMode}
             value={this.state.myStatus}
-          ></input>
+          ></Field>
         )}
-      </div>
+      </form>
     );
   }
 }
+
 export default MyProfileStatus;

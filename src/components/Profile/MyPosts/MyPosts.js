@@ -13,6 +13,7 @@ function MyPosts(props) {
   let addPostElement = (values) => {
     props.addPost(values.newPostText);
   };
+
   return (
     <div className={classes.content}>
       <div className={classes.postsHeader}>My posts</div>
@@ -29,6 +30,11 @@ function MyPosts(props) {
 const maxLength15 = maxLengthCreator(15);
 
 const MyPostsForm = (props) => {
+  let onKeyDown = (event) => {
+    if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
+      props.handleSubmit();
+    }
+  }
   return (
     <form onSubmit={props.handleSubmit}>
       <div className={classes.item}>
@@ -36,17 +42,18 @@ const MyPostsForm = (props) => {
           validate={[required, maxLength15]}
           className={classes.inputPost}
           component={Textarea}
-          placeholder="your very important opinion >.>"
+          onKeyDown={onKeyDown}
+          placeholder="write me.."
           name="newPostText"
         ></Field>
       </div>
       <div className={classes.post__add}>
-        <button>add post</button>
+        <button>ADD</button>
       </div>
     </form>
   );
 };
-const MyPostsFormRedux = reduxForm({ form: "ProfileAddeNewPostForm" })(
+const MyPostsFormRedux = reduxForm({ form: "ProfileAddNewPostForm" })(
   MyPostsForm
 );
 export default MyPosts;

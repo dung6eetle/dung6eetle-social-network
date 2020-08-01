@@ -8,8 +8,8 @@ const SET_MY_STATUS = "SET_MY_STATUS";
 
 let initialState = {
   postData: [
-    { id: 1, message: "Its my first post" },
-    { id: 2, message: "Hi,how are you?" },
+    { userId: 1, message: "Its my first post" },
+    { userId: 2, message: "Hi,how are you?" },
   ],
   profile: null,
   status: "",
@@ -19,7 +19,7 @@ const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
       let newPost = {
-        id: state.postData.length + 1,
+        userId: state.postData.length + 1,
         message: action.newPostText,
       };
       return {

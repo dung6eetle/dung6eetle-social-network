@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Lexend+Zetta&display=swap');
+
 .content {
    display: flex;
    flex-direction: column;
@@ -8,7 +11,6 @@
   flex-direction: column-reverse;
 }
 .postElementContainer {
-   max-width: 200px;
    background-color: #e1f669;
    border: none;
    color: white;
@@ -16,27 +18,28 @@
 .postElement {
    background-color: white; 
    color: black; 
-   border: 2px solid #e1f669;
+   border: 2px solid #3ADEF4;
 }
 .post__like {
   width: 30px;
   height: 30px;
 }
 .postsHeader {
-  font-size: 30px;
+  font-family: "Krona One";
+  font-size: 25px;
   font-weight: 700;
-  color: rgb(0, 0, 0);
-  padding-top: 20px;
+  color: rgb(255, 255, 255);
+  padding-top: 34px;
   padding-left: 30px;
+  padding-bottom: 30px;
 }
 .inputPost {
-   min-height: 75px;
-   font-size: 18px;
+  font-family: 'Lexend Zetta', sans-serif;
+  padding-top: 10px;
+  text-align: center;
+   font-size: 15px;
    border: 1px solid #ffffff;
-   border-radius: 3px;
-   -webkit-border-radius: 3px;
-   -moz-border-radius: 3px;
-   -khtml-border-radius: 3px;
+   
    outline: none;
  }
  .inputPost:focus {
@@ -44,4 +47,8 @@
  }
  .inputPost:focus::-webkit-input-placeholder {
      color: transparent
+ }
+ .post__add button{
+  font-family: "Krona One";
+  font-size: 25px; 
  }

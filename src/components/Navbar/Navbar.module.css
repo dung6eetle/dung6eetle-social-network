@@ -1,41 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+
 .nav {
-    grid-area: n;
-    background-color: rgb(70, 189, 219);
-    min-height: 100vh;
+  grid-area: n;
+  background-color: rgb(5, 30, 37);
+  min-height: 100vh;
+}
+.navContainer {
+    padding-top: 55px;
 }
 .item {
-    font-size: 28px;
-    padding: 15px 10px;
-    display: block;
-    position: relative;
-    transition: color .5s linear;
-    display: block;
-    line-height: 28px;
+  font-family: "Krona One", sans-serif;
+  font-size: 20px;
+  padding: 13px 18px;
+  display: block;
+  position: relative;
+  transition: color 0.5s linear;
+  display: block;
+  line-height: 28px;
 }
 .item:before {
-    
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: 0;
-      height: 5px;
-      background-color: #F8D552;
-      width: 75%;
-      opacity: 0;
-      transition: opacity .2s ease;
-}
-  
-.item:hover::before {
- opacity: 1;
-}
-.item.active::before {     
-opacity: 1;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  background-color: #3ADEF4;
+  width: 55%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-.item a{
-    color: rgb(255, 255, 255);
-    text-decoration: none;
+.item:hover::before {
+  opacity: 1;
+}
+.item.active::before {
+  opacity: 1;
+}
+
+.item a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 .item a.activeLink {
-    color: rgb(12, 11, 11);
+  color: rgb(133, 131, 131);
 }

@@ -6,6 +6,6 @@ export const required = (value) => {
 };
 export const maxLengthCreator = (maxLength) => (value) => {
   if (value && value.length > maxLength)
-    return `максимально ${maxLength} символов`;
+    return `max ${maxLength} simbols`;
   return undefined;
 };
