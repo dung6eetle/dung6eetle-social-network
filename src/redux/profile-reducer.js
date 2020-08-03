@@ -4,7 +4,8 @@ const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
-const SET_MY_STATUS = "SET_MY_STATUS";
+const SET_LIKE_COUNTER = "SET_LIKE_COUNTER";
+
 
 let initialState = {
   postData: [
@@ -13,7 +14,7 @@ let initialState = {
   ],
   profile: null,
   status: "",
-  myStatus: ''
+  likeCounter: 0
 };
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -41,10 +42,10 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         profile: action.profile,
       };
-    case SET_MY_STATUS: 
+    case SET_LIKE_COUNTER: 
       return {
         ...state,
-        myStatus: action.myStatus
+        likeCounter: action.likeCounter
       }
     default:
       return state;
@@ -76,10 +77,10 @@ export const setStatus = (status) => {
     status,
   };
 };
-export const setMyStatus = (myStatus) => {
+export const setLikeCounter = (likeCounter) => {
   return {
-    type: SET_MY_STATUS,
-    myStatus
+    type: SET_LIKE_COUNTER,
+    likeCounter
   }
 }
 

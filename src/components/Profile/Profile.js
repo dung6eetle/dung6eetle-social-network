@@ -6,8 +6,11 @@ import MyProfile from "./MyProfile/MyProfile";
 function Profile(props) {
   return (
     <div className={classes.content}>
-      <MyProfile profile={props.profile} status={props.status} myStatus={props.myStatus} updateStatus={props.updateStatus} />
-      <MyPostsContainer  />
+      <MyProfile 
+      profile={props.profile} 
+      status={props.status} 
+      updateStatus={props.updateStatus}/>
+      <MyPostsContainer likeCounter={props.likeCounter}/>
     </div>
   );
 }

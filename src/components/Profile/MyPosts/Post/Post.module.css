@@ -1,5 +1,11 @@
-.dialogs__item {
+
+.posts__item {
     text-align: center;
     font-family: 'Lexend Zetta', sans-serif;
     font-size: 15px;
+}
+.item__container {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 10px;
 }

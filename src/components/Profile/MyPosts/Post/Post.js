@@ -1,15 +1,17 @@
 import React from "react";
 import classes from "./Post.module.css";
 import { NavLink } from "react-router-dom";
+import LikeHookCounter from "../../../Hooks/LikeHookCounter";
 
 function Post(props) {
   return (
-    <div>
-      <div className={classes.dialogs__item}>
+    <div className={classes.posts}>
+      <div className={classes.posts__item}>
         <div className={classes.item__container}>
           <NavLink to={"/profile/" + props.id}></NavLink>
-          <p>{props.message}</p>
+          {props.message}
         </div>
+        <LikeHookCounter/>
       </div>
     </div>
   );

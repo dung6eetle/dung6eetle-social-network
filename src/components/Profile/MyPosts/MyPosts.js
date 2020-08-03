@@ -18,7 +18,7 @@ function MyPosts(props) {
     <div className={classes.content}>
       <div className={classes.postsHeader}>My posts</div>
       <div className={classes.posts}>
-        <MyPostsFormRedux onSubmit={addPostElement} />
+        <MyPostsFormRedux onSubmit={addPostElement}/>
         <div className={classes.postElementContainer}>
           <div className={classes.postElement}>{postElement}</div>
         </div>

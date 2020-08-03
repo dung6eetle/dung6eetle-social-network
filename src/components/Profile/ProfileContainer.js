@@ -29,6 +29,7 @@ class ProfileContainer extends React.Component {
         status={this.props.status}
         myStatus={this.props.myStatus}
         updateStatus={this.props.updateStatus}
+        likeCounter={this.props.likeCounter}
       />
     );
   }
@@ -40,6 +41,7 @@ let mapStateToProps = (state) => {
     myStatus: state.profilePage.myStatus,
     authorizedUserId: state.auth.userId,
     isAuth: state.auth.isAuth,
+    likeCounter: state.profilePage.likeCounter
   };
 };
 //Compose

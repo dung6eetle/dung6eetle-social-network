@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 5px;
+}
+.like img{
+    width: auto;
+    height: 20px;
+}
+.count {
+    padding-right: 5px;
+    font-family: 'Lexend Zetta', sans-serif;
+    color: rgb(163, 163, 163);
+    font-size: 15px ;
+}

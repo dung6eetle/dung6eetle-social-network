@@ -4,6 +4,7 @@ import Preloader from "../../common/Preloader";
 import watermelon from "../../../assets/watermelon.svg";
 import myPhoto from "../../../assets/hacker.svg";
 import ProfileStatus from "./ProfileStatus";
+import ProfileStatusHook from "./ProfileStatusHook";
 
 
 function MyProfile(props) {
@@ -23,7 +24,7 @@ function MyProfile(props) {
             <img className={classes.imgStatus} src={watermelon} />
           </div>
           <div className={classes.status}>
-            <ProfileStatus
+            <ProfileStatusHook
               status={props.status}
               updateStatus={props.updateStatus}
             />
