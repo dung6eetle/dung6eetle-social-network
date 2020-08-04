@@ -5,26 +5,32 @@ import { Field, reduxForm } from "redux-form";
 import { required, maxLengthCreator } from "../../utils/validators/validators";
 import { Textarea } from "../../utils/FormControl";
 
-function MyPosts(props) {
-  let postElement = props.postData.map((p) => (
-    <Post message={p.message} key={p.id} id={p.id} />
-  ));
+class MyPosts extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("render");
+    return nextProps != this.props || nextState != this.state; // перерисуйся только если текущее значения пропсов и стейта не равны новым
+  }
 
-  let addPostElement = (values) => {
-    props.addPost(values.newPostText);
-  };
+  render() {
+    let postElement = this.props.postData.map((p) => (
+      <Post message={p.message} key={p.id} id={p.id} />
+    ));
 
-  return (
-    <div className={classes.content}>
-      <div className={classes.postsHeader}>My posts</div>
-      <div className={classes.posts}>
-        <MyPostsFormRedux onSubmit={addPostElement}/>
-        <div className={classes.postElementContainer}>
-          <div className={classes.postElement}>{postElement}</div>
+    let addPostElement = (values) => {
+      this.props.addPost(values.newPostText);
+    };
+    return (
+      <div className={classes.content}>
+        <div className={classes.postsHeader}>My posts</div>
+        <div className={classes.posts}>
+          <MyPostsFormRedux onSubmit={addPostElement} />
+          <div className={classes.postElementContainer}>
+            <div className={classes.postElement}>{postElement}</div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 const maxLength15 = maxLengthCreator(15);
@@ -34,7 +40,7 @@ const MyPostsForm = (props) => {
     if (event.key === "Enter" && (event.metaKey || event.ctrlKey)) {
       props.handleSubmit();
     }
-  }
+  };
   return (
     <form onSubmit={props.handleSubmit}>
       <div className={classes.item}>

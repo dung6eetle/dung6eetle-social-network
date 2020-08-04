@@ -6,7 +6,6 @@ import myPhoto from "../../../assets/hacker.svg";
 import ProfileStatus from "./ProfileStatus";
 import ProfileStatusHook from "./ProfileStatusHook";
 
-
 function MyProfile(props) {
   if (!props.profile) {
     return <Preloader />;
@@ -30,7 +29,8 @@ function MyProfile(props) {
             />
           </div>
           <div className={classes.itemPhoto}>
-            <img className={classes.imgAnon}
+            <img
+              className={classes.imgAnon}
               src={
                 props.profile.photos.large != null
                   ? props.profile.photos.small

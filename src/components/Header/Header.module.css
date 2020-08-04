@@ -7,14 +7,25 @@
     flex-direction: row;
     justify-content: flex-end;
 }
+.logo__container {
+    padding-top: 20px;
+    padding-right: 175px;
+}
 .header__logo {
-    padding-right: 195px;
+    width: 312px;
+    height: 142px;
+    background-size: cover;
+    background-position: center center;
+    transition: box-shadow 0.5s;
+    will-change: transform;
+    background-image: url(../../assets/dung6eetleLogo.svg);
 }
-.header__logo img {
-    padding-top: 25px;
+
+/* /* .header__logo img {
+    padding-top: 30px;
     width: auto;
-    height: 150px;
-}
+    height: 150px; */
+ 
 .loginBlock {
     font-family: "Krona One";
     color: rgb(230, 220, 220);
