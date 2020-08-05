@@ -14,9 +14,9 @@ let mapDispatchToProps = (dispatch) => {
     addPost: (newPostText) => {
       dispatch(addPostActionCreator(newPostText))
     },
-    setLikeCounter: (likeCounter) => {
-       dispatch(setLikeCounter(likeCounter))
-    }
+    // setLikeCounter: (likeCounter) => {
+    //    dispatch(setLikeCounter(likeCounter))
+    // }
   }
 }
 

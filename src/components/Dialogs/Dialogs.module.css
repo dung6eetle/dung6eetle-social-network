@@ -1,18 +1,23 @@
 .dialogs {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 4fr 10fr;
-    min-height: 100vh;
+    min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
 }
 .dialogsItems {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+    display: flex;
+    flex-direction: row;
 }
 .dialogs__item {
-    padding: 30px;
+
+    padding: 40px;
+    border-top: 1px solid #666666;
 }
 .dialogs__item a{
     text-decoration: none;
+    font-family: "Krona One";
+    color: black;
 }
 .messages {
     display: flex;

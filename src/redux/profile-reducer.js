@@ -5,16 +5,16 @@ const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
 const SET_LIKE_COUNTER = "SET_LIKE_COUNTER";
+const DELETE_POST = "DELETE_POST"
 
 
 let initialState = {
   postData: [
-    { userId: 1, message: "Its my first post" },
-    { userId: 2, message: "Hi,how are you?" },
+    { id: 1, message: "Its my first post", likeCounter: 0 },
+    { id: 2, message: "Hi,how are you?", likeCounter: 0 },
   ],
   profile: null,
-  status: "",
-  likeCounter: 0
+  status: ""
 };
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -42,10 +42,15 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         profile: action.profile,
       };
-    case SET_LIKE_COUNTER: 
+    // case SET_LIKE_COUNTER: 
+    //   return {
+    //     ...state,
+    //     likeCounter: state.postData.likeCounter+1
+    //   }
+    case DELETE_POST: 
       return {
         ...state,
-        likeCounter: action.likeCounter
+        postData: state.postData.filter(p => p.id != action.postId)
       }
     default:
       return state;
@@ -77,10 +82,16 @@ export const setStatus = (status) => {
     status,
   };
 };
-export const setLikeCounter = (likeCounter) => {
+// export const setLikeCounter = (likeCounter) => {
+//   return {
+//     type: SET_LIKE_COUNTER,
+//     likeCounter
+//   }
+// }
+export const deletePost = (postId) => {
   return {
-    type: SET_LIKE_COUNTER,
-    likeCounter
+    type: DELETE_POST,
+    postId
   }
 }
 

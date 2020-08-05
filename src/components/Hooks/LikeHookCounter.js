@@ -5,7 +5,7 @@ import { setLikeCounter } from "../../redux/profile-reducer";
 
 const LikeCounterHook = (props) => {
     const [count, setCountLike] = useState(0);
-    useEffect (() => {setLikeCounter(props.likeCounter)}, [props.likeCounter])
+    // useEffect (() => {setCountLike(props.likeCounter)}, [props.likeCounter])
     
     return (
         <div className={classes.container}>

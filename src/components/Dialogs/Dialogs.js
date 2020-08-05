@@ -21,22 +21,28 @@ function Dialogs(props) {
 
   return (
     <div className={classes.dialogs}>
-      <div className={classes.dialogsItems}>{dialogsElement}</div>
-      <div className={classes.messages}>
+      <div className={classes.dialogsItems}>
+        {dialogsElement}
         <div>{messagesElement}</div>
-        <div>
-          <AddMessageFormRedux onSubmit={addNewMessage} />
+        <div className={classes.messages}>
+          <div>
+            <AddMessageFormRedux onSubmit={addNewMessage} />
+          </div>
         </div>
       </div>
     </div>
   );
 }
-const maxLength100 = maxLengthCreator(100)
+const maxLength100 = maxLengthCreator(100);
 const AddMessageForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div>
-        <Field validate={[required,maxLength100]} component={Textarea} name="newMessageBody"></Field>
+        <Field
+          validate={[required, maxLength100]}
+          component={Textarea}
+          name="newMessageBody"
+        ></Field>
       </div>
       <div>
         <button>send</button>
