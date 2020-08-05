@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 ReactDOM.render(
 <BrowserRouter>
  <Provider store={store}>
-   <App dispatch={store.dispatch.bind(store)} store={store}/>
+   <App dispatch={store.dispatch.bind(store)} store={store}/>   
  </Provider>
 </BrowserRouter>,
 document.getElementById('root')

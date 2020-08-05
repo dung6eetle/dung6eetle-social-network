@@ -41,21 +41,21 @@ export const getAuthUserData = () => async (dispatch) => {
 };
 
 export const login = (email, password, rememberMe) => async (dispatch) => {
-  let response =  await authApi.login(email, password, rememberMe)
-  
-    if (response.data.resultCode === 0) {
-      dispatch(getAuthUserData());
-    } else {
-      let messageError =
-        response.data.messages.length > 0 ? response.data.messages[0] : "error";
-      dispatch(stopSubmit("login", { _error: messageError }));
-    }
+  let response = await authApi.login(email, password, rememberMe);
+
+  if (response.data.resultCode === 0) {
+    dispatch(getAuthUserData());
+  } else {
+    let messageError =
+      response.data.messages.length > 0 ? response.data.messages[0] : "error";
+    dispatch(stopSubmit("login", { _error: messageError }));
+  }
 };
 export const logout = () => async (dispatch) => {
-  let response = await authApi.logout()
-    if (response.data.resultCode === 0) {
-      dispatch(setAuthUserData(null, null, null, false));
-    }
+  let response = await authApi.logout();
+  if (response.data.resultCode === 0) {
+    dispatch(setAuthUserData(null, null, null, false));
+  }
 };
 
 export default authReducer;

@@ -1,21 +1,19 @@
 import React from 'react';
 import './App.css';
-//import Loader from './Loader'
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import Friends from './components/Friends/Friends'
 import UsersContainer from './components/Users/usersContainer'
 import Login from './components/Login/Login.js'
-import {BrowserRouter,Route, withRouter} from 'react-router-dom'
+import {Route, withRouter} from 'react-router-dom'
 import ProfileContainer from './components/Profile/ProfileContainer';
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader';
-
 //const Dialogs = React.lazy(() => import ('./components/Dialogs/Dialogs')) /* Так компонента не попадает в общий бандл, используется вместе с Саспенс*/
-
+//import Loader from './Loader'
 class App extends React.Component {
   componentDidMount() {
     this.props.initializeApp()
@@ -25,7 +23,6 @@ class App extends React.Component {
        return <Preloader/>
     }
     return (
-      <BrowserRouter>
       <div className="app_wrapper">
          <HeaderContainer/>
          <Navbar/>
@@ -37,7 +34,6 @@ class App extends React.Component {
             <Route path="/login" render={()=> <Login/>}/>
          </div>
       </div>
-    </BrowserRouter>
     )
   }
 }
