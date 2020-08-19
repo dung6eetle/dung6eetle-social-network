@@ -7,7 +7,8 @@ import User from "./User";
 
 let Users = ({
   onPageChanged,
-  totalUsersCount,
+  totalItemsCount,
+  portionSize,
   pageSize,
   currentPage,
   followingInProgress,
@@ -19,7 +20,8 @@ let Users = ({
     <div className={classes.usersContainer}>
       <div className={classes.usersPageCount}>
         <Paginator
-          totalUsersCount={totalUsersCount}
+          totalItemsCount={totalItemsCount}
+          portionSize={portionSize}
           pageSize={pageSize}
           onPageChanged={onPageChanged}
           currentPage={currentPage}
