@@ -10,7 +10,7 @@ const DELETE_POST = "DELETE_POST";
 let initialState = {
   postData: [
     { id: 1, message: "Its my first post", likeCounter: 0 },
-    { id: 2, message: "Hi,how are you?", likeCounter: 0 },
+    { id: 2, message: "Hi,how are you?", likeCounter: 0},
   ],
   profile: null,
   status: "",

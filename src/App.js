@@ -12,8 +12,10 @@ import { connect } from 'react-redux';
 import { compose } from "redux";
 import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader';
+
 //const Dialogs = React.lazy(() => import ('./components/Dialogs/Dialogs')) /* Так компонента не попадает в общий бандл, используется вместе с Саспенс*/
 //import Loader from './Loader'
+
 class App extends React.Component {
   componentDidMount() {
     this.props.initializeApp()

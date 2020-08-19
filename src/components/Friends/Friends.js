@@ -11,7 +11,9 @@ function Friends(props) {
                My friends
             </div>
             {friendsElement}
+            <FriendsList/>
         </div>
+        
     )
 }
 export default Friends
