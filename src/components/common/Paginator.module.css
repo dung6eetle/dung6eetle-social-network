@@ -1,8 +1,27 @@
 .selectedPage {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
+    padding: 0px 3px;
 }
 .defaultPage {
-    font-size: 15px;
-    padding-left: 1px;
+    font-size: 20px;
+    padding: 0px 3px;
+}
+.paginator_block {
+   display: flex;
+   align-content: center;
+   margin-top: 30px;
+   margin-left: 150px;
+   
+}
+.pages_block {
+   padding-left: 20px;
+   padding-right: 20px;
+}
+.arrow_container {
+   
+}
+.arrow img{ 
+    width: 25px;
+    height: 25px;
 }

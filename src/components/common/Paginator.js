@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Paginator.module.css";
+import arrowLeft from '../../assets/arrow.svg'
+import arrowRight from '../../assets/next.svg'
 
 const Paginator = ({
   totalItemsCount,
@@ -21,10 +23,18 @@ const Paginator = ({
 
   let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
   let rightPortionPageNumber = portionNumber * pageSize;
+
   return (
-    <div>
-      { portionNumber > 1 && <button onClick={() => setPortionNumber(portionNumber - 1)}>tuda</button>}
-      <div>
+    <div className={classes.paginator_block}>
+      <div className={classes.arrow_container}>
+        {portionNumber > 1 && (
+          <div className={classes.arrow} >
+            <img src={arrowLeft} onClick={() => setPortionNumber(portionNumber - 1)}/>
+          </div>
+        )}
+      </div>
+
+      <div className={classes.pages_block}>
         {pages
           .filter(
             (p) => p >= leftPortionPageNumber && p <= rightPortionPageNumber
@@ -45,9 +55,14 @@ const Paginator = ({
             );
           })}
       </div>
-      
-      { portionCount > portionNumber && <button onClick={() => setPortionNumber(portionNumber + 1)}>suda</button>}
-      
+
+      <div className={classes.arrow_container}> 
+      {portionCount > portionNumber && (
+        <div className={classes.arrow} >
+          <img src={arrowRight} onClick={() => setPortionNumber(portionNumber + 1)}/>
+        </div>
+      )}
+      </div>
     </div>
   );
 };
