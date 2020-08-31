@@ -15,7 +15,6 @@ const FriendsHook = () => {
     const fetchPosts = async () => {
       setLoading(true);
       const response = await usersApi.getUsers()
-      debugger;
       setPosts(response.data.items);
       setLoading(false);
     };
@@ -30,7 +29,6 @@ const FriendsHook = () => {
     setCurrentPage(pageNumber)
   }
   
-  console.log('posts total count' , posts.totalCount)
   return (
     <div>
       <h1>Users</h1>
