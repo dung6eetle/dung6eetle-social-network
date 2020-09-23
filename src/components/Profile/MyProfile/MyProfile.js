@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./MyProfile.module.css";
 import Preloader from "../../common/Preloader";
 import watermelon from "../../../assets/watermelon.svg";
 import myPhoto from "../../../assets/hacker.svg";
 import ProfileStatus from "./ProfileStatus";
 import ProfileStatusHook from "./ProfileStatusHook";
+import MyProfileData from "./MyProfileData";
+import MyProfileDataForm from "./MyProfileDataForm";
 
 function MyProfile(props) {
+  const [editMode, setEditMode] = useState(false)
+
   if (!props.profile) {
     return <Preloader />;
   }
   if (!props.profile.photos) {
     return <Preloader />;
+  }
+
+  const onMainPhotoSelected = (e) => {
+     if(e.target.files.length) {
+       props.savePhoto(e.target.files[0])
+     }
   }
 
   return (
@@ -37,16 +47,14 @@ function MyProfile(props) {
                   : myPhoto
               }
             />
+            {props.isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
           </div>
-          <div className={classes.itemDiscription}>
-            <p>
-              {props.profile.aboutMe != null ? (
-                props.profile.aboutMe
-              ) : (
-                <p>ABOUT ME..</p>
-              )}
-            </p>
-          </div>
+
+          {editMode ? <MyProfileDataForm profile={props.profile}/> : <MyProfileData goToEditMode={() => setEditMode(true)} isOwner={props.isOwner} profile={props.profile}/>}
+          
+          {/* */}
+
+          
         </div>
       </div>
     </>

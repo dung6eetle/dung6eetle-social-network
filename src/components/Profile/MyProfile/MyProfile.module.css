@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
 
 .profileContainer {
+    font-family: "Krona One";
+    color: rgb(230, 220, 220);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

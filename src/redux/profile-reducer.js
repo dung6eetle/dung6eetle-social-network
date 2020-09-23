@@ -6,6 +6,7 @@ const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
 const SET_LIKE_COUNTER = "SET_LIKE_COUNTER";
 const DELETE_POST = "DELETE_POST";
+const SAVE_PHOTO_SUCCESS = "SAVE_PHOTO_SUCCESS";
 
 let initialState = {
   postData: [
@@ -51,6 +52,11 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         postData: state.postData.filter((p) => p.id != action.postId),
       };
+    case SAVE_PHOTO_SUCCESS: 
+      return {
+        ...state,
+        profile: {...state.profile, photos: action.photos}
+      }
     default:
       return state;
   }
@@ -94,6 +100,14 @@ export const deletePost = (postId) => {
   };
 };
 
+export const savePhotoSuccess = (photos) => {
+  debugger;
+  return {
+    type: SAVE_PHOTO_SUCCESS,
+    photos,
+  };
+};
+
 //THUNKs
 
 export const getUserProfile = (userId) => async (dispatch) => {
@@ -108,6 +122,13 @@ export const updateStatus = (status) => async (dispatch) => {
   let response = await profileApi.updateStatus(status);
   if (response.data.resultCode === 0) {
     dispatch(setStatus(status));
+  }
+};
+
+export const savePhoto = (file) => async (dispatch) => {
+  let response = await profileApi.savePhoto(file);
+  if (response.data.resultCode === 0) {
+    dispatch(savePhotoSuccess(response.data.data.photos))
   }
 };
 
