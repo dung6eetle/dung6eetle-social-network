@@ -61,8 +61,10 @@ import { required } from "../utils/validators/validators";
 const LoginForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit} className={classes.loginFormContainer}>
-      {/*обязательно передавать handleSubmit, тк с ним приходят из пропсов
-      другие вещи(e.preventDefault,сбор данных,) */}
+
+      {/* *обязательно передавать handleSubmit, тк с ним приходят из пропсов
+      другие вещи(e.preventDefault,сбор данных,)  */}
+
       <div className={classes.Title}>
         <p>Sign in</p>
       </div>
@@ -104,6 +106,19 @@ const LoginForm = (props) => {
       >
         Login
       </button>
+      <div>
+      {props.captchaUrl && <img className={classes.captchaImg} src={props.captchaUrl}/>}
+      {props.captchaUrl && 
+        <Field
+          name={"captcha"}
+          component={Input}
+          validate={[required]}
+          className={classes.inputPass}
+          type={"captcha"}
+          placeholder={"please enter captcha"}
+        />
+      }
+      </div>
     </form>
   );
 };
@@ -114,15 +129,16 @@ const LoginReduxForm = reduxForm({
 
 const Login = (props) => {
   const onSubmit = (formData) => {
-    props.login(formData.email, formData.password, formData.rememberMe, formData.aboutMe);
+    props.login(formData.email, formData.password, formData.rememberMe, formData.aboutMe, formData.captcha);
   };
   if (props.isAuth) {
     return <Redirect to={"/profile"} />;
   }
-  return <LoginReduxForm onSubmit={onSubmit} />;
+  return <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit} />;  // прокинул пропсы в редукс форм(обязательно всегда ибо форм стейт и редукс стейт это разные сущности )
 };
 
 const mapStateToProps = (state) => ({
+  captchaUrl: state.auth.captchaUrl,
   isAuth: state.auth.isAuth
 });
 
