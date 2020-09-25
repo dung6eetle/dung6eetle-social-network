@@ -71,3 +71,13 @@
     color: rgb(133, 131, 131);
     padding: 1px 1px;
 }
+
+/* DATA PROFILE */
+
+.data {
+    max-width:600px;
+    background-color: rgb(253, 251, 251);
+}
+.data_top {
+    display: flex;
+}
