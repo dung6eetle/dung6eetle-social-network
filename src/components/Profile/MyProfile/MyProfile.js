@@ -9,7 +9,7 @@ import MyProfileData from "./MyProfileData";
 import MyProfileDataForm from "./MyProfileDataForm";
 
 function MyProfile(props) {
-  const [editMode, setEditMode] = useState(false)
+  const [editMode, setEditMode] = useState(false);
 
   if (!props.profile) {
     return <Preloader />;
@@ -19,10 +19,19 @@ function MyProfile(props) {
   }
 
   const onMainPhotoSelected = (e) => {
-     if(e.target.files.length) {
-       props.savePhoto(e.target.files[0])
-     }
-  }
+    if (e.target.files.length) {
+      props.savePhoto(e.target.files[0]);
+    }
+  };
+
+  const onSubmit = (formData) => {
+    console.log("form", formData);
+    props.saveProfile(formData).then(
+      () => {
+        setEditMode(false);
+      }
+    )
+  };
 
   return (
     <>
@@ -47,14 +56,24 @@ function MyProfile(props) {
                   : myPhoto
               }
             />
-            {props.isOwner && <input type="file" onChange={onMainPhotoSelected}/>}
+            {props.isOwner && (
+              <input type="file" onChange={onMainPhotoSelected} />
+            )}
           </div>
 
-          {editMode ? <MyProfileDataForm profile={props.profile}/> : <MyProfileData goToEditMode={() => setEditMode(true)} isOwner={props.isOwner} profile={props.profile}/>}
-          
-          {/* */}
-
-          
+          {editMode ? (
+            <MyProfileDataForm
+              onSubmit={onSubmit}
+              initialValues={props.profile}
+              profile={props.profile}
+            />
+          ) : (
+            <MyProfileData
+              goToEditMode={() => setEditMode(true)}
+              isOwner={props.isOwner}
+              profile={props.profile}
+            />
+          )}
         </div>
       </div>
     </>

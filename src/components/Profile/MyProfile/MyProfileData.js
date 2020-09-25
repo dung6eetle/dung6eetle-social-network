@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from './MyProfileDataForm'
+
 
 function MyProfileData({ profile, goToEditMode, isOwner }) {
   return (
@@ -7,10 +7,11 @@ function MyProfileData({ profile, goToEditMode, isOwner }) {
       {isOwner && <button onClick={goToEditMode}>edit</button>}
       <div>
         <div>Looking for a job: {profile.lookingForAJob ? "yes" : "no"}</div>
-        <p>{profile.aboutMe != null ? profile.aboutMe : <p>ABOUT ME..</p>}</p>
+        <div>Description:{profile.lookingForAJobDescription}</div>
+        <p>About me:{profile.aboutMe != null ? profile.aboutMe : <p>ABOUT ME..</p>}</p>
       </div>
       <div>
-        {/* <div>
+        <div>
           Contacts:
           {Object.keys(profile.contacts).map((key) => (
             <Contact
@@ -19,10 +20,19 @@ function MyProfileData({ profile, goToEditMode, isOwner }) {
               contactValue={profile.contacts[key]}
             />
           ))}
-        </div> */}
+        </div>
       </div>
     </>
   );
 }
+export const Contact = ({ contactTitle, contactValue }) => {
+    return (
+      <>
+        <div>
+          {contactTitle} : {contactValue}
+        </div>
+      </>
+    );
+};
 
 export default MyProfileData;
