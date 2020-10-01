@@ -19,7 +19,7 @@ class ProfileContainer extends React.Component {
       userId = this.props.authorizedUserId;       // а при первом рендере или по нажатию на вкалдку профайл 
       if (!userId) {                              // должна показываться img Моего профиля, логика дублируется
         this.props.history.push("/login")         // в два метода didUpdate didMount. 
-      }
+      }                                           // MAtch попадает сюда благодаря коннекту 
     }
     this.props.getUserProfile(userId); //Thunk
     this.props.getStatus(userId); //Thunk
