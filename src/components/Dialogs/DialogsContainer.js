@@ -1,4 +1,4 @@
-import Dialogs from './Dialogs'
+import Dialogs from './Dialogs.js'
 import { sendMessageCreator} from '../../redux/dialogs-reducer'
 import { connect } from 'react-redux'
 import { withAuthRedirect } from '../hoc/withAuthRedirect'

@@ -7,16 +7,14 @@ function MyProfileData({ profile, goToEditMode, isOwner }) {
       
       <div className={classes.data}>
         <div className={classes.data_top}>
-          <div>Description:{profile.lookingForAJobDescription}</div>
-          <div>Looking for a job: {profile.lookingForAJob ? "yes" : "no"}</div>
+          <div className={classes.item_string}><span>Description: </span>{profile.lookingForAJobDescription} </div>
+          <div className={classes.item_string}><span>Looking for a job:</span> {profile.lookingForAJob ? "yes" : "no"}</div>
         </div>
         <div className={classes.data_center}>
-          <div>
-            About me:
-            {profile.aboutMe != null ? profile.aboutMe : <p>ABOUT ME..</p>}
+          <div className={classes.item_string}>
+            <span>About me:</span> {profile.aboutMe != null ? profile.aboutMe : <p>ABOUT ME..</p>}
           </div>
-          <div>
-          Contacts:
+          <div className={classes.item_string}>
           {Object.keys(profile.contacts).map((key) => (
             <Contact
               key={key}

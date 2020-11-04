@@ -76,8 +76,34 @@
 
 .data {
     max-width:600px;
-    background-color: rgb(253, 251, 251);
+    background-color: rgb(20, 8, 8);
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 12px;
+
 }
 .data_top {
     display: flex;
+    margin-bottom: 20px;
+}
+.item_string {
+    padding: 5px 10px;
+}
+.item_string span{
+   color: #3ADEF4;
+   font-weight: 700;
+}
+.edit_bottom {
+    font-size: 22px;
+    padding: 10px 10px;
+}
+.edit_bottom button {
+    background-color: #3ADEF4;
+    text-decoration: none;
+    outline: none;
+    border: 5px;
+}
+.data_bottom {
+ display: flex;
+ justify-content: flex-end;
 }

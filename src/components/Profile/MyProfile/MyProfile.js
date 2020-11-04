@@ -56,9 +56,12 @@ function MyProfile(props) {
                   : myPhoto
               }
             />
+            <div>
             {props.isOwner && (
               <input type="file" onChange={onMainPhotoSelected} />
             )}
+            </div>
+            
           </div>
 
           {editMode ? (
