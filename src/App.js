@@ -3,7 +3,7 @@ import "./App.css";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Navbar from "./components/Navbar/Navbar";
 import Friends from "./components/Friends/Friends";
-import UsersContainer from "./components/Users/usersContainer";
+import { UsersPage } from "./components/Users/usersContainer";
 import Login from "./components/Login/Login.js";
 import { Redirect, Route, withRouter, Switch } from "react-router-dom";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -44,7 +44,7 @@ class App extends React.Component {
               path="/friends"
               render={() => <Friends store={this.props.store} />}
             />
-            <Route path="/users" render={() => <UsersContainer />} />
+            <Route path="/users" render={() => <UsersPage />} />
             <Route exact path="/login" render={() => <Login />} />
             <Route path="*" render={() => <div>404 NOT FOUND</div>} />
           </Switch>
